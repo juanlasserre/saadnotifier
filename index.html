@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAADNotifier - Próximamente en Google Play</title>
+    <title>SAAD Notifier - Próximamente en Google Play</title>
     <style>
         * {
             box-sizing: border-box;
@@ -23,7 +23,7 @@
         }
         .card {
             background: #ffffff;
-            max-width: 520px;
+            max-width: 650px; /* Ampliado ligeramente para acomodar el texto nuevo */
             width: 100%;
             padding: 48px 32px;
             border-radius: 16px;
@@ -54,6 +54,37 @@
             font-size: 1rem;
             color: #4b5563;
             margin-bottom: 28px;
+        }
+        /* Nuevos estilos para la sección de características */
+        .features {
+            text-align: left;
+            margin: 0 0 32px 0;
+            padding: 0;
+            list-style: none;
+            background-color: #f9fafb;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #f3f4f6;
+        }
+        .feature-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .feature-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .feature-question {
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+        .feature-answer {
+            font-size: 0.95rem;
+            color: #4b5563;
         }
         .store-badge {
             display: inline-block;
@@ -87,22 +118,42 @@
 
     <div class="card">
         <span class="badge">Próximamente</span>
-        <h1>SAADNotifier</h1>
-        <p class="subtitle">Notificaciones y seguimiento de ofertas de empleo docentes en tiempo real.</p>
+        <h1>SAAD Notifier</h1>
+        <p class="subtitle">La herramienta definitiva para automatizar y simplificar la vida del docente bonaerense.</p>
+        
+        <!-- Nueva sección de venta enfocada en el docente -->
+        <ul class="features">
+            <li class="feature-item">
+                <div class="feature-question">¿Querés enterarte de las ofertas de empleo antes que nadie?</div>
+                <div class="feature-answer">El radar automático te consigue los cargos avisándote al instante de las nuevas publicaciones, sin que tengas que vivir conectado al portal oficial[cite: 1].</div>
+            </li>
+            <li class="feature-item">
+                <div class="feature-question">¿Te agota armar tu Declaración Jurada y calcular si un horario te sirve?</div>
+                <div class="feature-answer">El asistente cruza las ofertas con tu disponibilidad real y emite alertas solo cuando la franja horaria se alinea a la perfección con tus horas actuales[cite: 2].</div>
+            </li>
+            <li class="feature-item">
+                <div class="feature-question">¿Alguna vez perdiste una fecha clave o un comunicado importante de la SAD?</div>
+                <div class="feature-answer">La plataforma unifica los comunicados de distintas SADs en un solo lugar[cite: 1]. Además, previene omisiones avisándote antes de que venzan los plazos de trámites y listados[cite: 2].</div>
+            </li>
+            <li class="feature-item">
+                <div class="feature-question">¿Perdés el control de tus recibos y licencias médicas?</div>
+                <div class="feature-answer">La app agrupa tu información automáticamente[cite: 1]. Detecta descuentos e inasistencias en tus recibos, y te permite acceder a la "letra chica" que el Estado oculta sobre los topes de licencias[cite: 1].</div>
+            </li>
+        </ul>
         
         <div class="store-badge">
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Disponible en Google Play">
         </div>
 
         <!-- Botón de Tutoriales -->
-        <div style="margin-top: 24px;">
+        <div style="margin-top: 16px;">
             <a href="tutoriales.html" style="display: inline-block; background-color: #f8fafc; color: #1e40af; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; border: 1px solid #bfdbfe; transition: all 0.2s;">
                 ▶ Ver Tutoriales de Uso
             </a>
         </div>
 
         <div class="footer">
-            <p>&copy; SAADNotifier &bull; <a href="tutoriales.html">Tutoriales</a> &bull; <a href="privacidad.html">Política de Privacidad</a></p>
+            <p>&copy; SAAD Notifier &bull; <a href="tutoriales.html">Tutoriales</a> &bull; <a href="privacidad.html">Política de Privacidad</a></p>
         </div>
 
     </div>
