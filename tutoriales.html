@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriales de Uso - SAADNotifier</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333333;
+            line-height: 1.6;
+            padding: 40px 16px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .card {
+            background: #ffffff;
+            max-width: 900px; /* Más ancho para acomodar los videos */
+            width: 100%;
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 4px 12px;
+            border-radius: 12px;
+            border: 1px solid #bfdbfe;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #111827;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        .subtitle {
+            font-size: 1rem;
+            color: #4b5563;
+        }
+        
+        /* SISTEMA DE VIDEOS */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .video-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Contenedor 16:9 para videos responsivos */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            background-color: #000;
+        }
+        .video-container iframe, 
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 16px;
+        }
+        .video-title {
+            font-size: 1.1rem;
+            color: #1f2937;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        .video-desc {
+            font-size: 0.9rem;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+
+        /* Enlaces y Footer */
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #4b5563;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        .btn-back:hover {
+            color: #111827;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <a href="index.html" class="btn-back">&larr; Volver al inicio</a>
+        
+        <div class="header">
+            <span class="badge">Centro de Ayuda</span>
+            <h1>Tutoriales de Uso</h1>
+            <p class="subtitle">Aprende a configurar y utilizar SAADNotifier paso a paso.</p>
+        </div>
+
+        <div class="video-grid">
+            
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <!-- Reemplaza el 'src' con el link de tu video de YouTube -->
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="¿Cómo instalar y configurar SAADNotifier?" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">1. Primeros pasos y configuración</h2>
+                    <p class="video-desc">Aprende a iniciar sesión por primera vez y configurar tus credenciales de forma segura en tu dispositivo.</p>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="¿Cómo buscar ofertas?" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">2. Cómo visualizar ofertas</h2>
+                    <p class="video-desc">Te mostramos cómo filtrar las vacantes y configurar las notificaciones para que no te pierdas ninguna oportunidad.</p>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="Solución de problemas" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">3. Solución de problemas comunes</h2>
+                    <p class="video-desc">Qué hacer si el portal oficial está caído o si la aplicación no te muestra las vacantes actualizadas.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>¿Aún tienes dudas? Contáctanos en <a href="mailto:soporte.saadnotifier@gmail.com">soporte.saadnotifier@gmail.com</a></p> <!--[cite: 3] -->
+        </div>
+    </div>
+
+</body>
+</html>
