@@ -15,7 +15,7 @@
             background-color: #f4f6f8;
             color: #333333;
             line-height: 1.6;
-            padding: 20px 16px;
+            padding: 40px 16px;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -23,14 +23,14 @@
         }
         .card {
             background: #ffffff;
-            max-width: 580px; /* Un poco más angosta para que quede compacta */
+            max-width: 600px; /* Tarjeta ensanchada para que el subtítulo entre en una línea */
             width: 100%;
-            padding: 40px 32px; /* Reducido a lo alto para que entre toda en pantalla */
+            padding: 20px 32px;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             border: 1px solid #e5e7eb;
             text-align: center;
-            overflow: hidden; 
+            overflow: hidden; /* Evita que el slider se salga de la tarjeta */
         }
         .badge {
             display: inline-block;
@@ -41,55 +41,59 @@
             padding: 4px 12px;
             border-radius: 12px;
             border: 1px solid #bfdbfe;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         h1 {
             font-size: 2.2rem;
             color: #111827;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-weight: 800;
         }
         .subtitle {
-            font-size: 0.95rem; /* Apenas más chico para que entre en una línea */
+            font-size: 1rem;
             color: #4b5563;
             margin-bottom: 32px;
         }
 
-        /* --- SLIDER MINIMALISTA --- */
+        /* --- INICIO DEL PLUGIN CSS (SLIDER MINIMALISTA) --- */
         .slider-container {
             width: 100%;
             overflow: hidden;
             position: relative;
-            margin-bottom: 32px;
-            /* Efecto difuminado a los costados */
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            margin-bottom: 36px;
+            /* Efecto difuminado a los costados para que se vea moderno */
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
         }
         
         .slider-track {
             display: flex;
             gap: 16px;
             width: max-content;
-            /* Animación un poco más lenta para poder leer la tarjeta entera */
-            animation: scroll 35s linear infinite;
+            /* Animación continua de 25 segundos */
+            animation: scroll 25s linear infinite;
+        }
+        
+        /* Pausa la animación si el usuario apoya el mouse o el dedo */
+        .slider-track:hover {
+            animation-play-state: paused;
         }
         
         .slider-item {
-            width: 440px; /* Tarjeta ensanchada para que se vea de a una por vez */
+            width: 300px; /* Ancho fijo para cada tarjetita */
             background-color: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 24px;
+            padding: 20px;
             text-align: left;
             flex-shrink: 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-            white-space: normal;
         }
         
         .slider-item h3 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #111827;
             margin-bottom: 8px;
             font-weight: 700;
@@ -97,13 +101,14 @@
         }
         
         .slider-item p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #4b5563;
-            line-height: 1.5;
+            line-height: 1.4;
         }
         
         @keyframes scroll {
             0% { transform: translateX(0); }
+            /* Se desplaza exactamente la mitad del track (las 4 tarjetas originales) */
             100% { transform: translateX(calc(-50% - 8px)); } 
         }
         /* --- FIN DEL SLIDER --- */
@@ -120,7 +125,7 @@
             transform: scale(1.05);
         }
         .footer {
-            margin-top: 24px;
+            margin-top: 32px;
             padding-top: 20px;
             border-top: 1px solid #f0f0f0;
             font-size: 0.85rem;
@@ -161,12 +166,12 @@
                 <!-- Tarjeta 3 -->
                 <div class="slider-item">
                     <h3>¿Perdiste fechas clave o comunicados de la SAD?</h3>
-                    <p>La plataforma unifica comunicados en un solo lugar[cite: 1] y previene omisiones avisándote antes de que venzan los plazos de trámites y listados[cite: 2].</p>
+                    <p>La plataforma unifica comunicados en un solo lugar y previene omisiones avisándote antes de que venzan los plazos de trámites y listados[cite: 2].</p>
                 </div>
                 <!-- Tarjeta 4 -->
                 <div class="slider-item">
                     <h3>¿Perdés el control de tus recibos y licencias médicas?</h3>
-                    <p>La app agrupa tu información automáticamente[cite: 1], detecta descuentos y te permite acceder a la "letra chica" que el Estado oculta sobre topes[cite: 1].</p>
+                    <p>La app agrupa tu información automáticamente, detecta descuentos y te permite acceder a la "letra chica" que el Estado oculta sobre topes[cite: 1].</p>
                 </div>
 
                 <!-- Duplicado exacto de las 4 tarjetas para el efecto infinito -->
@@ -180,11 +185,11 @@
                 </div>
                 <div class="slider-item">
                     <h3>¿Perdiste fechas clave o comunicados de la SAD?</h3>
-                    <p>La plataforma unifica comunicados en un solo lugar[cite: 1] y previene omisiones avisándote antes de que venzan los plazos de trámites y listados[cite: 2].</p>
+                    <p>La plataforma unifica comunicados en un solo lugar y previene omisiones avisándote antes de que venzan los plazos de trámites y listados[cite: 2].</p>
                 </div>
                 <div class="slider-item">
                     <h3>¿Perdés el control de tus recibos y licencias médicas?</h3>
-                    <p>La app agrupa tu información automáticamente[cite: 1], detecta descuentos y te permite acceder a la "letra chica" que el Estado oculta sobre topes[cite: 1].</p>
+                    <p>La app agrupa tu información automáticamente, detecta descuentos y te permite acceder a la "letra chica" que el Estado oculta sobre topes[cite: 1].</p>
                 </div>
                 
             </div>
