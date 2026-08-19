@@ -10,9 +10,13 @@
             margin: 0;
             padding: 0;
         }
+        
+        /* Fondo con un sutil gradiente en movimiento para un toque más moderno */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f6f8;
+            background: linear-gradient(-45deg, #eef2f3, #e0eafc, #cfdef3, #eef2f3);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #333333;
             line-height: 1.6;
             padding: 40px 16px;
@@ -20,17 +24,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow-x: hidden;
         }
-        .card {
-            background: #ffffff;
-            max-width: 800px; /* Un poco más ancha para respirar mejor */
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            max-width: 900px;
             width: 100%;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            border: 1px solid #e5e7eb;
+            padding: 40px 32px 32px 32px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             text-align: center;
         }
+
         .badge {
             display: inline-block;
             background-color: #eff6ff;
@@ -39,70 +53,80 @@
             font-size: 0.8rem;
             padding: 6px 14px;
             border-radius: 20px;
+            border: 1px solid #bfdbfe;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         h1 {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             color: #111827;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
+
         .subtitle {
             font-size: 1.05rem;
             color: #4b5563;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
         }
 
-        /* --- NUEVO DISEÑO GRID MINIMALISTA --- */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 36px;
+        /* --- INICIO DEL CARRUSEL 3D --- */
+        .carousel-scene {
+            position: relative;
+            width: 100%;
+            height: 280px; /* Altura fija para contener las tarjetas */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px; /* Da la profundidad 3D */
+            margin-bottom: 40px;
+            overflow: hidden;
         }
-        
-        .feature-item {
-            background-color: #f8fafc;
+
+        .carousel-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .card-3d {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 320px;
+            margin-left: -160px; /* Centrado exacto (mitad del width) */
+            margin-top: -110px;  /* Centrado exacto (mitad del height aprox) */
+            background-color: #ffffff;
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 24px;
             text-align: left;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            /* Transición fluida para el movimiento */
+            transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+                        opacity 0.6s ease, 
+                        z-index 0.6s;
+            cursor: pointer;
         }
 
-        .feature-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.03);
-            border-color: #cbd5e1;
-        }
-        
-        .feature-item h3 {
-            font-size: 1rem;
-            color: #1f2937;
-            margin-bottom: 10px;
+        .card-3d h3 {
+            font-size: 1.05rem;
+            color: #111827;
+            margin-bottom: 12px;
             font-weight: 700;
             line-height: 1.3;
         }
-        
-        .feature-item p {
+
+        .card-3d p {
             font-size: 0.9rem;
             color: #4b5563;
             line-height: 1.5;
         }
-
-        /* Responsive para móviles: pasa a 1 columna */
-        @media (max-width: 650px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            .card {
-                padding: 32px 20px;
-            }
-        }
-        /* --- FIN DEL GRID --- */
+        /* --- FIN DEL CARRUSEL 3D --- */
 
         .store-badge {
             display: inline-block;
@@ -115,10 +139,9 @@
         .store-badge img:hover {
             transform: scale(1.05);
         }
+
         .btn-tutorial {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            display: inline-block;
             background-color: #ffffff;
             color: #1e40af;
             padding: 12px 24px;
@@ -127,16 +150,17 @@
             font-weight: 600;
             border: 1.5px solid #bfdbfe;
             transition: all 0.2s;
-            font-size: 0.95rem;
+            margin-top: 10px;
         }
         .btn-tutorial:hover {
             background-color: #eff6ff;
-            border-color: #93c5fd;
+            transform: translateY(-2px);
         }
+
         .footer {
             margin-top: 32px;
-            padding-top: 24px;
-            border-top: 1px solid #f3f4f6;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
             font-size: 0.85rem;
             color: #9ca3af;
         }
@@ -148,42 +172,51 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .card-3d { width: 280px; margin-left: -140px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="card">
+    <div class="main-container">
         <span class="badge">Próximamente</span>
         <h1>©SAADNotifier</h1>
         <p class="subtitle">Notificaciones y seguimiento de ofertas de empleo docentes en tiempo real.</p>
         
-        <!-- Contenedor Grid (Reemplaza al Slider) -->
-        <div class="features-grid">
-            
-            <div class="feature-item">
-                <h3>¿Querés enterarte de las ofertas antes que nadie?</h3>
-                <p>SAAD Notifier busca por vos nuevos cargos y te avisa cada vez que se publica una nueva oportunidad, sin que tengas que consultar manualmente el portal oficial.</p>
-            </div>
-            
-            <div class="feature-item">
-                <h3>¿Te agota armar tu DDJJ y calcular si un horario sirve?</h3>
-                <p>Te permite actualizar tu DDJJ fácilmente, cruzar las ofertas con tu disponibilidad real y emitir alertas solo cuando se alinean con tus horas.</p>
-            </div>
-            
-            <div class="feature-item">
-                <h3>¿Perdiste fechas clave o comunicados importantes?</h3>
-                <p>Unifica comunicados en un solo lugar y previene omisiones avisándote de las fechas importantes antes de que venzan los plazos de trámites.</p>
-            </div>
-            
-            <div class="feature-item">
-                <h3>¿Perdés el control de recibos y licencias médicas?</h3>
-                <p>Agrupa tu información automáticamente, detecta descuentos, inasistencias y te permite conocer los códigos asociados a cada diagnóstico médico.</p>
-            </div>
+        <!-- Contenedor del Carrusel 3D -->
+        <div class="carousel-scene" id="scene">
+            <div class="carousel-track" id="track">
+                
+                <div class="card-3d">
+                    <h3>¿Querés enterarte de las ofertas antes que nadie?</h3>
+                    <p>SAAD Notifier busca por vos nuevos cargos y te avisa cada vez que se publica una nueva oportunidad, sin que tengas que consultar manualmente el portal oficial.</p>
+                </div>
+                
+                <div class="card-3d">
+                    <h3>¿Te agota armar tu DDJJ y calcular si un horario te sirve?</h3>
+                    <p>SAAD Notifier te permite actualizar tu DDJJ fácilmente, cruzar las ofertas con tu disponibilidad real y emitir alertas solo cuando se alinea con tus horas.</p>
+                </div>
+                
+                <div class="card-3d">
+                    <h3>¿Perdiste fechas clave o comunicados importantes?</h3>
+                    <p>SAAD Notifier unifica comunicados en un solo lugar y previene omisiones avisándote las fechas importantes antes de que venzan los plazos de trámites.</p>
+                </div>
+                
+                <div class="card-3d">
+                    <h3>¿Perdés el control de tus recibos de sueldo y licencias médicas?</h3>
+                    <p>SAAD Notifier agrupa tu información automáticamente, detecta descuentos, inasistencias y te permite conocer los detalles de los códigos de diagnósticos médicos.</p>
+                </div>
 
+            </div>
         </div>
         
         <div class="store-badge">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Disponible en Google Play">
+            <a href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Disponible en Google Play">
+            </a>
         </div>
 
         <div>
@@ -197,6 +230,97 @@
         </div>
 
     </div>
+
+    <!-- Script para la magia del 3D -->
+    <script>
+        const cards = document.querySelectorAll('.card-3d');
+        const scene = document.getElementById('scene');
+        let currentIndex = 0;
+        let autoPlayInterval;
+
+        function updateCarousel() {
+            cards.forEach((card, index) => {
+                // Lógica matemática para saber a qué distancia está cada tarjeta del centro
+                let diff = index - currentIndex;
+                if (diff === 3) diff = -1;
+                if (diff === -3) diff = 1;
+                if (diff === 2 || diff === -2) diff = 2; 
+
+                // Propiedades base 3D
+                let translateZ = 0;
+                let translateX = 0;
+                let rotateY = 0;
+                let opacity = 1;
+                let zIndex = 10;
+
+                if (diff === 0) {
+                    // Tarjeta activa (Centro)
+                    translateZ = 50;
+                    translateX = 0;
+                    rotateY = 0;
+                    opacity = 1;
+                    zIndex = 20;
+                    card.style.filter = "none";
+                } else if (diff === 1) {
+                    // Tarjeta Derecha
+                    translateZ = -100;
+                    translateX = 180;
+                    rotateY = -25;
+                    opacity = 0.6;
+                    zIndex = 10;
+                    card.style.filter = "blur(1px)";
+                } else if (diff === -1) {
+                    // Tarjeta Izquierda
+                    translateZ = -100;
+                    translateX = -180;
+                    rotateY = 25;
+                    opacity = 0.6;
+                    zIndex = 10;
+                    card.style.filter = "blur(1px)";
+                } else {
+                    // Tarjeta Oculta (Atrás)
+                    translateZ = -200;
+                    translateX = 0;
+                    rotateY = 0;
+                    opacity = 0;
+                    zIndex = 0;
+                }
+
+                // Aplicamos las transformaciones por CSS
+                card.style.transform = `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`;
+                card.style.opacity = opacity;
+                card.style.zIndex = zIndex;
+            });
+        }
+
+        function nextCard() {
+            currentIndex = (currentIndex + 1) % cards.length;
+            updateCarousel();
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextCard, 3500); // Rota cada 3.5 segundos
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Si el usuario hace click en una tarjeta, se pausa y gira
+        cards.forEach((card) => {
+            card.addEventListener('click', () => {
+                nextCard();
+            });
+        });
+
+        // Pausar si el usuario pone el mouse encima para que pueda leer
+        scene.addEventListener('mouseenter', stopAutoPlay);
+        scene.addEventListener('mouseleave', startAutoPlay);
+
+        // Iniciar
+        updateCarousel();
+        startAutoPlay();
+    </script>
 
 </body>
 </html>
