@@ -22,12 +22,13 @@
         }
         .card {
             background: #ffffff;
-            max-width: 900px; /* Más ancho para acomodar los videos */
+            max-width: 900px;
             width: 100%;
-            padding: 40px 32px;
+            padding: 32px 32px 24px 32px;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             border: 1px solid #e5e7eb;
+            position: relative;
         }
         .header {
             text-align: center;
@@ -44,12 +45,12 @@
             padding: 4px 12px;
             border-radius: 12px;
             border: 1px solid #bfdbfe;
-            margin-bottom: 12px;
+            margin-bottom: 18px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #111827;
             margin-bottom: 8px;
             font-weight: 800;
@@ -57,6 +58,18 @@
         .subtitle {
             font-size: 1rem;
             color: #4b5563;
+        }
+        .btn-back {
+            position: absolute;
+            top: 36px;
+            left: 32px;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .btn-back:hover {
+            color: #111827;
         }
         
         /* SISTEMA DE VIDEOS */
@@ -127,48 +140,15 @@
             border-top: 1px solid #f0f0f0;
             padding-top: 20px;
         }
-
-        /* NUEVA NAVEGACIÓN SUPERIOR */
-        .top-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 16px;
-            width: 100%;
-        }
-        .btn-back {
-            color: #6b7280;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            width: 80px; /* Ancho fijo para equilibrar */
-            text-align: left;
-        }
-        .btn-back:hover {
-            color: #111827;
-        }
-        .spacer {
-            width: 80px; /* Mismo ancho que btn-back para centrar el badge exacto */
-        }
-        
-        /* Ajuste para que el badge no empuje el título hacia abajo */
-        .top-nav .badge {
-            margin-bottom: 0;
-        }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <!-- Barra superior con botón alineado y badge centrado -->
-        <div class="top-nav">
-            <a href="index.html" class="btn-back">&larr; Volver</a>
-            <span class="badge">Centro de Ayuda</span>
-            <div class="spacer"></div>
-        </div>
+        <a href="index.html" class="btn-back">&larr; Volver</a>
         
-        <!-- Títulos con menos espacio en blanco -->
         <div class="header">
+            <span class="badge">Centro de Ayuda</span>
             <h1>Tutoriales de Uso</h1>
             <p class="subtitle">Aprende a configurar y utilizar SAADNotifier paso a paso.</p>
         </div>
@@ -178,7 +158,6 @@
             <!-- Video 1 -->
             <div class="video-card">
                 <div class="video-container">
-                    <!-- Reemplaza el 'src' con el link de tu video de YouTube -->
                     <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="¿Cómo instalar y configurar SAADNotifier?" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
@@ -212,7 +191,7 @@
         </div>
 
         <div class="footer">
-            <p>¿Aún tienes dudas? Contáctanos en <a href="mailto:soporte.saadnotifier@gmail.com">soporte.saadnotifier@gmail.com</a></p> <!--[cite: 3] -->
+            <p>¿Aún tienes dudas? Contáctanos en <a href="mailto:soporte.saadnotifier@gmail.com">soporte.saadnotifier@gmail.com</a></p>
         </div>
     </div>
 
