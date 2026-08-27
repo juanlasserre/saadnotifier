@@ -127,24 +127,48 @@
             border-top: 1px solid #f0f0f0;
             padding-top: 20px;
         }
-        .btn-back {
-            display: inline-block;
+
+        /* NUEVA NAVEGACIÓN SUPERIOR */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 16px;
+            width: 100%;
+        }
+        .btn-back {
             color: #6b7280;
+            text-decoration: none;
             font-size: 0.9rem;
+            font-weight: 500;
+            width: 80px; /* Ancho fijo para equilibrar */
+            text-align: left;
         }
         .btn-back:hover {
             color: #111827;
+        }
+        .spacer {
+            width: 80px; /* Mismo ancho que btn-back para centrar el badge exacto */
+        }
+        
+        /* Ajuste para que el badge no empuje el título hacia abajo */
+        .top-nav .badge {
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <a href="index.html" class="btn-back">&larr; Volver al inicio</a>
-        
-        <div class="header">
+        <!-- Barra superior con botón alineado y badge centrado -->
+        <div class="top-nav">
+            <a href="index.html" class="btn-back">&larr; Volver</a>
             <span class="badge">Centro de Ayuda</span>
+            <div class="spacer"></div>
+        </div>
+        
+        <!-- Títulos con menos espacio en blanco -->
+        <div class="header">
             <h1>Tutoriales de Uso</h1>
             <p class="subtitle">Aprende a configurar y utilizar SAADNotifier paso a paso.</p>
         </div>
