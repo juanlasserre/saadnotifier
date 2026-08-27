@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - SAADNotifier</title>
+    <title>Tutoriales de Uso - SAADNotifier</title>
     <style>
         * {
             box-sizing: border-box;
@@ -73,19 +73,55 @@
             color: #111827;
         }
         
-        /* Estilos básicos para el texto de privacidad */
-        .content {
-            text-align: left;
-            color: #4b5563;
-            font-size: 0.95rem;
+        /* SISTEMA DE VIDEOS */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
         }
-        .content h2 {
+        .video-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Contenedor 16:9 para videos responsivos */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            background-color: #000;
+        }
+        .video-container iframe, 
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 16px;
+        }
+        .video-title {
+            font-size: 1.1rem;
             color: #1f2937;
-            font-size: 1.2rem;
-            margin: 24px 0 12px 0;
+            margin-bottom: 6px;
+            font-weight: 700;
         }
-        .content p {
-            margin-bottom: 16px;
+        .video-desc {
+            font-size: 0.9rem;
+            color: #6b7280;
+            line-height: 1.4;
         }
 
         /* Enlaces y Footer */
@@ -98,7 +134,7 @@
             text-decoration: underline;
         }
         .footer {
-            margin-top: 40px;
+            margin-top: 20px;
             text-align: center;
             font-size: 0.9rem;
             color: #4b5563;
@@ -113,25 +149,50 @@
         <a href="index.html" class="btn-back">&larr; Volver</a>
         
         <div class="header">
-            <span class="badge">Legal</span>
-            <h1>Política de Privacidad</h1>
-            <p class="subtitle">Términos y condiciones sobre el uso de tus datos en SAADNotifier.</p>
+            <span class="badge">Centro de Ayuda</span>
+            <h1>Tutoriales de Uso</h1>
+            <p class="subtitle">Aprende a configurar y utilizar SAADNotifier paso a paso.</p>
         </div>
 
-        <div class="content">
-            <!-- PEGA AQUÍ TODO TU TEXTO DE PRIVACIDAD -->
-            <h2>1. Información que recopilamos</h2>
-            <p>SAADNotifier recopila únicamente los datos necesarios para brindar alertas sobre ofertas docentes. Toda la información de sesión se maneja de manera segura.</p>
+        <div class="video-grid">
+            
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="¿Cómo instalar y configurar SAADNotifier?" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">1. Primeros pasos y configuración</h2>
+                    <p class="video-desc">Aprende a iniciar sesión por primera vez y configurar tus credenciales de forma segura en tu dispositivo.</p>
+                </div>
+            </div>
 
-            <h2>2. Uso de la información</h2>
-            <p>Tus datos se utilizan exclusivamente para cruzar tu declaración jurada con las ofertas disponibles y enviar notificaciones. No vendemos ni compartimos datos con terceros.</p>
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="¿Cómo buscar ofertas?" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">2. Cómo visualizar ofertas</h2>
+                    <p class="video-desc">Te mostramos cómo filtrar las vacantes y configurar las notificaciones para que no te pierdas ninguna oportunidad.</p>
+                </div>
+            </div>
 
-            <h2>3. Seguridad</h2>
-            <p>Implementamos las medidas de seguridad necesarias para garantizar que tus credenciales de acceso se comuniquen de forma segura con los portales correspondientes.</p>
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="Solución de problemas" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">3. Solución de problemas comunes</h2>
+                    <p class="video-desc">Qué hacer si el portal oficial está caído o si la aplicación no te muestra las vacantes actualizadas.</p>
+                </div>
+            </div>
+
         </div>
 
         <div class="footer">
-            <p>¿Tienes dudas sobre tu privacidad? Contáctanos en <a href="mailto:soporte.saadnotifier@gmail.com">soporte.saadnotifier@gmail.com</a></p>
+            <p>¿Aún tienes dudas? Contáctanos en <a href="mailto:soporte.saadnotifier@gmail.com">soporte.saadnotifier@gmail.com</a></p>
         </div>
     </div>
 
