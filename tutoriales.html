@@ -85,6 +85,8 @@
             border-radius: 12px;
             overflow: hidden;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
         }
         .video-card:hover {
             transform: translateY(-4px);
@@ -110,6 +112,9 @@
         
         .video-info {
             padding: 16px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         .video-title {
             font-size: 1.1rem;
@@ -158,33 +163,143 @@
             <!-- Video 1 -->
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="¿Cómo instalar y configurar SAADNotifier?" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="1. Primeros pasos y navegación" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <h2 class="video-title">1. Primeros pasos y configuración</h2>
-                    <p class="video-desc">Aprende a iniciar sesión por primera vez y configurar tus credenciales de forma segura en tu dispositivo.</p>
+                    <h2 class="video-title">1. Primeros pasos y navegación</h2>
+                    <p class="video-desc">Descubrí cómo instalar la aplicación, iniciar sesión por primera vez de forma segura y recorrer todas las herramientas que SAAD Notifier tiene para ofrecerte.</p>
                 </div>
             </div>
 
             <!-- Video 2 -->
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="¿Cómo buscar ofertas?" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="2. Soporte y comunidad" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <h2 class="video-title">2. Cómo visualizar ofertas</h2>
-                    <p class="video-desc">Te mostramos cómo filtrar las vacantes y configurar las notificaciones para que no te pierdas ninguna oportunidad.</p>
+                    <h2 class="video-title">2. Soporte y comunidad</h2>
+                    <p class="video-desc">Aprendé a contactarte con nuestro equipo de soporte técnico y descubrí cómo acceder a estos tutoriales para sacarle el máximo provecho a la app.</p>
                 </div>
             </div>
 
             <!-- Video 3 -->
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="Solución de problemas" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="3. Búsqueda de ofertas de empleo" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <h2 class="video-title">3. Solución de problemas comunes</h2>
-                    <p class="video-desc">Qué hacer si el portal oficial está caído o si la aplicación no te muestra las vacantes actualizadas.</p>
+                    <h2 class="video-title">3. Búsqueda de ofertas de empleo</h2>
+                    <p class="video-desc">Aprendé a utilizar los filtros avanzados y la sección de favoritos para encontrar rápidamente las vacantes que te interesan y postularte.</p>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="4. Alertas de ofertas (Básico)" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">4. Alertas de ofertas (Básico)</h2>
+                    <p class="video-desc">Configuración inicial: te mostramos cómo otorgar los permisos necesarios en tu celular para que la app funcione y cómo configurar tus primeros filtros de búsqueda.</p>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="5. Alertas de ofertas (Avanzado)" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">5. Alertas de ofertas (Avanzado)</h2>
+                    <p class="video-desc">Llevá tus alertas al siguiente nivel. Aprendé a configurar filtros específicos por fechas y a activar el cruce inteligente con tu Declaración Jurada (DDJJ) para que la app solo te avise de ofertas que encajan en tus horarios libres.</p>
+                </div>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="6. Mi agenda docente" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">6. Mi agenda docente</h2>
+                    <p class="video-desc">Descubrí cómo visualizar el calendario y configurar notificaciones automáticas para que la app te avise sobre eventos importantes, fechas de cobro e inscripciones.</p>
+                </div>
+            </div>
+
+            <!-- Video 7 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="7. Comunicados y novedades SAD" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">7. Comunicados y novedades SAD</h2>
+                    <p class="video-desc">Mantenete siempre informado. Utilizá los filtros para consultar rápidamente las resoluciones, comunicados y novedades vigentes emitidos por las Secretarías de Asuntos Docentes de todos los distritos.</p>
+                </div>
+            </div>
+
+            <!-- Video 8 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="8. Mis licencias médicas" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">8. Mis licencias médicas</h2>
+                    <p class="video-desc">Accedé al detalle de tu historial de licencias médicas. Aprendé a consultar la información técnica sobre los diagnósticos, topes y días aprobados o en revisión.</p>
+                </div>
+            </div>
+
+            <!-- Video 9 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="9. Asistente de establecimientos" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">9. Asistente de establecimientos</h2>
+                    <p class="video-desc">Explorá la base de datos completa con todas las escuelas de la provincia. Usá filtros avanzados y el GPS de tu celular para encontrar los establecimientos más cercanos a tu ubicación.</p>
+                </div>
+            </div>
+
+            <!-- Video 10 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="10. Mis haberes y recibos de sueldo" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">10. Mis haberes y recibos de sueldo</h2>
+                    <p class="video-desc">Aprendé a realizar un respaldo automático de todos tus recibos de sueldo (COULI) en tu celular y consultar rápidamente tu información de ingresos, descuentos y antigüedad.</p>
+                </div>
+            </div>
+
+            <!-- Video 11 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="11. Consulta de puntaje (PID)" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">11. Consulta de puntaje (PID)</h2>
+                    <p class="video-desc">Revisá tu inscripción y puntaje en los distintos listados del ABC (Oficial, 108 A/B, FINES, Formación Profesional, etc.) de manera ágil, clara y detallada.</p>
+                </div>
+            </div>
+
+            <!-- Video 12 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="12. Creación asistida de la DDJJ" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">12. Creación asistida de la DDJJ</h2>
+                    <p class="video-desc">Llevá tu Declaración Jurada de Incompatibilidad Horaria siempre con vos. Aprendé a actualizar tus cargos, modificar horarios y generar el PDF listo para imprimir desde cualquier lugar, sin necesidad de usar la computadora.</p>
+                </div>
+            </div>
+
+            <!-- Video 13 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO_AQUI" title="13. Solución de problemas" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h2 class="video-title">13. Solución de problemas</h2>
+                    <p class="video-desc">¿Qué hacer si el portal oficial del ABC está caído, funciona lento o la aplicación no te muestra las vacantes actualizadas? Conocé los pasos para resolver los inconvenientes más comunes.</p>
                 </div>
             </div>
 
